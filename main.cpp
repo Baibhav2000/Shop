@@ -33,8 +33,23 @@ int main()
 	cout<<"Please enter the amount for payment\n";
 	double payment;
 	cin>>payment;
-	if(payment>total)
-		cout<<"\nYour change : "<<payment-total<<endl;
+	do
+	{
+		if(payment<total)
+		{
+			cout<<"You need to pay "<<total-payment<<" more money for successful payment\n";
+			total-=payment;
+			cout<<"Enter money for payment\n";
+			cin>>payment;
+		}
+		else if(payment>total)
+		{
+			cout<<"\nYour change : "<<payment-total<<endl;
+			total=0;
+		}
+		else
+			total-=payment;
+	}while(total!=0);
 	cout<<"\n\nPayment successful!!!";
 	cout<<"\n";
 	cout<<"\nDo you want to give any feedback, Sir/Madam(Y/N)?\n";
