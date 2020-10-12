@@ -28,6 +28,7 @@ int main()
 		cin>>ch1;
 		cin.ignore();
 	}
+	cout<<"\n";
 	double total=bill(conn);
 	cout<<"Total amount payable : "<<total<<endl;
 	cout<<"Please enter the amount for payment\n";
